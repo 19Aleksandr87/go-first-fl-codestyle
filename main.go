@@ -1,3 +1,4 @@
+// main Основной пакет.
 package main
 
 import (
@@ -6,34 +7,35 @@ import (
 	"strings"
 )
 
-func randint(min, max int) int {
+// Генератор случайных чисел
+func Randint(min, max int) int {
 	return rand.Intn(max-min) + min
 }
 
 func attack(charName, charClass string) string {
 	if charClass == "warrior" {
-		return fmt.Sprintf("%s нанес урон противнику, равный %d.", charName, randint(8, 10))
+		return fmt.Sprintf("%s нанес урон противнику, равный %d.", charName, Randint(8, 10))
 	}
 
 	if charClass == "mage" {
-		return fmt.Sprintf("%s нанес урон противнику, равный %d.", charName, randint(10, 15))
+		return fmt.Sprintf("%s нанес урон противнику, равный %d.", charName, Randint(10, 15))
 	}
 
 	if charClass == "healer" {
-		return fmt.Sprintf("%s нанес урон противнику, равный %d.", charName, randint(2, 4))
+		return fmt.Sprintf("%s нанес урон противнику, равный %d.", charName, Randint(2, 4))
 	}
 	return "неизвестный класс персонажа"
 }
 
 func defence(charName, charClass string) string {
 	if charClass == "warrior" {
-		return fmt.Sprintf("%s блокировал %d урона.", charName, randint(15, 20))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, Randint(15, 20))
 	}
 	if charClass == "mage" {
-		return fmt.Sprintf("%s блокировал %d урона.", charName, randint(8, 12))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, Randint(8, 12))
 	}
 	if charClass == "healer" {
-		return fmt.Sprintf("%s блокировал %d урона.", charName, randint(12, 15))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, Randint(12, 15))
 	}
 	return "неизвестный класс персонажа"
 }
