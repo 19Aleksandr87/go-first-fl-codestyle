@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// Генератор случайных чисел
+// Randint Генератор случайных чисел
 func Randint(min, max int) int {
 	return rand.Intn(max-min) + min
 }
